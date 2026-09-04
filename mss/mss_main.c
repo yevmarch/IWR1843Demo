@@ -1244,7 +1244,7 @@ static void MmwDemo_transmitProcessedOutput
                         (MMWAVE_SDK_VERSION_MAJOR << 24);
 
     packetLen = sizeof(MmwDemo_output_message_header);
-    if ((pGuiMonSel->detectedObjects == 1) || (pGuiMonSel->detectedObjects == 2) &&
+    if (((pGuiMonSel->detectedObjects == 1) || (pGuiMonSel->detectedObjects == 2)) &&
          (result->numObjOut > 0))
     {
         tl[tlvIdx].type = MMWDEMO_OUTPUT_MSG_DETECTED_POINTS;
@@ -1320,7 +1320,7 @@ static void MmwDemo_transmitProcessedOutput
 
     tlvIdx = 0;
     /* Send detected Objects */
-    if ((pGuiMonSel->detectedObjects == 1) || (pGuiMonSel->detectedObjects == 2) &&
+    if (((pGuiMonSel->detectedObjects == 1) || (pGuiMonSel->detectedObjects == 2)) &&
         (result->numObjOut > 0))
     {
         UART_writePolling (uartHandle,
